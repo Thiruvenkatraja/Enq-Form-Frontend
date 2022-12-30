@@ -50,7 +50,7 @@ import axios from "axios";
 
   const postData=()=>{
     if(Object.values(values).includes("") === false){
-      axios.post('http://localhost:5000/enq/EnquiryData', enqdata) 
+      axios.post('https://curious-dog-baseball-cap.cyclic.app/enq/EnquiryData', enqdata) 
       .then(res=>console.log(res.data))
        console.log("success",Object.values(values))
     }

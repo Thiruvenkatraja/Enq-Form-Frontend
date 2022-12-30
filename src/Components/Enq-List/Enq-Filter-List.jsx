@@ -17,7 +17,7 @@ const EnqFilterList = () => {
     const [currentPage, setCurrentPage] = useState(1);
   
     const getData = () => {
-      axios.get("http://localhost:5000/enq",{
+      axios.get(" https://curious-dog-baseball-cap.cyclic.app/enq",{
         headers: {
           'Access-Control-Allow-Origin': true,
         }
@@ -99,7 +99,7 @@ const EnqFilterList = () => {
     };
     const editData = (id) => {
       axios
-        .put(`http://localhost:5000/enq/update-enqdata/${id}`, enqdata)
+        .put(` https://curious-dog-baseball-cap.cyclic.app/enq/update-enqdata/${id}`, enqdata)
         .then((res) => {
           console.log(res.data);
           console.log("Empdata Successfully updated");

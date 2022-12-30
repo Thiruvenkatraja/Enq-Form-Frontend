@@ -15,7 +15,7 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
     setShow(true)
   }
   const deleteEnqdata =async () => {
-   await axios.delete(`http://localhost:5000/enq/delete-enqdata/${deleteId}`)
+   await axios.delete(` https://curious-dog-baseball-cap.cyclic.app/enq/delete-enqdata/${deleteId}`)
       .then((res) => console.log("Employee Data Successfully deleted"))
 
       .catch((error) => {
