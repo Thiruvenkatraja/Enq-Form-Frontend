@@ -1,0 +1,93 @@
+.main-container {
+    width: 10vw;
+    
+   }
+   .left-bar{
+    z-index:-1;
+   }
+   .sidebar {
+     background: #003140;
+     color: white;
+     position:fixed;
+     z-index:2;
+     height: 100vh;
+   }
+  
+   .top-bar {
+     background: #003140;
+     width: 500vw;
+     height: 4rem;
+     position: fixed;
+     left: 2.5rem;
+   }
+   .top-bar h1 {
+     font-size: 2rem;
+     color: white;
+     padding: 0.8rem 0 0 1rem;
+   }
+   .top-section {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 10px;
+     margin:0.5rem 0 1rem 0 ;
+   }
+   .logo img {
+     /* font-size: 18px; */
+     width: 100px;
+     height: 30px;
+     line-height: 0;
+   }
+   .link-text {
+     white-space: nowrap;
+     font-size: 15px;
+     margin:1rem 0;
+   }
+   .icon{
+     margin:1rem 0;
+   }
+   .link {
+     display: flex;
+     color: white;
+     text-decoration: none;
+     gap: 1rem;
+     padding: 5px 10px;
+   }
+   .link:hover {
+     border-right: 4px solid white;
+     color:white;
+     background: #017fa5;
+     transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+   }
+   .active {
+     border-right: 4px solid white;
+     background:#017fa5;
+   }
+   
+   .active {
+     border-right: 4px solid white;
+     background: none;
+   }
+   
+   
+   @media screen and (max-width: 960px){
+     .sidebar{
+       
+       height:500vh;
+     }
+     .top-bar{
+       position:fixed;
+   }
+     }
+   
+   @media screen and (max-width:375px){
+     .top-bar{
+       height:3rem;
+      
+     }
+     .top-bar h1{
+       font-size:1.5rem;
+       padding: 0.6rem 0 0 1rem;
+     }
+   }
+   
