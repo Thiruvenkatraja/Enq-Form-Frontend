@@ -18,7 +18,7 @@ export default function EnquiryList() {
 
   const getData = () => {
     axios
-      .get("http://localhost:5000/enq", {
+      .get(" https://curious-dog-baseball-cap.cyclic.app/enq", {
         headers: {
           "Access-Control-Allow-Origin": true,
         },
@@ -100,7 +100,7 @@ export default function EnquiryList() {
   };
   const editData = (id) => {
     axios
-      .put(`http://localhost:5000/enq/update-enqdata/${id}`, enqdata)
+      .put(` https://curious-dog-baseball-cap.cyclic.app/enq/update-enqdata/${id}`, enqdata)
       .then((res) => {
         console.log(res.data);
         console.log("Empdata Successfully updated");
