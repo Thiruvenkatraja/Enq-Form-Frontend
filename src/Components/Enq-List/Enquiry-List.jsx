@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Table from "react-bootstrap/Table";
 import { FaFilter } from "react-icons/fa";
 import _ from "lodash";
@@ -183,9 +183,9 @@ export default function EnquiryList() {
   const Datas = Datass;
   const Filename = "EnquiredData";
 
-  const [search, setSearch] = useState("");
 
-  useEffect(() => {}, [search]);
+  let inputRef = useRef(null)
+  
   const [allVal, setAllVal] = useState([]);
   const [click1, setClick1] = useState(true);
   const [click2, setClick2] = useState(true);
@@ -246,12 +246,12 @@ export default function EnquiryList() {
     const pagePost = _(list).slice(startIndex).take(pageSize).value();
     setPaged(pagePost);
   };
-
+  
   return (
     <div className="data-table">
       <input
         type="text"
-        value={search}
+        ref={inputRef}
         className="form-control"
         placeholder="Search"
         name="search"
@@ -262,21 +262,21 @@ export default function EnquiryList() {
           marginBottom: "20",
           width: "20rem",
         }}
-        onChange={(e) => {
-          setSearch(e.target.value);
+        onChange={() => {
+          
 
-          if (search === "") {
+          if (inputRef.current.value === null) {
             setPaged(allVal) || setList(allVal);
           } else {
             let temp = allVal.filter(
               (data) =>
-                data.name.toLowerCase().trim().includes(search) ||
+                data.name.toLowerCase().trim().includes(inputRef.current.value) ||
                 data.followupcalldate
                   .toString()
                   .toLowerCase()
                   .trim()
-                  .includes(search) ||
-                data.mobile.toString().toLowerCase().trim().includes(search)
+                  .includes(inputRef.current.value) ||
+                data.mobile.toString().toLowerCase().trim().includes(inputRef.current.value)
             );
             setPaged(temp) || setList(temp);
           }
